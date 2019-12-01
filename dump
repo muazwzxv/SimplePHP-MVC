@@ -1,0 +1,6 @@
+
+//htaccess config
+
+RewriteEngine On
+RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]

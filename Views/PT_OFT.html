@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>[JuneBank]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./index.css">
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {modal.style.display = "block";}
+    span.onclick = function() {modal.style.display = "none";}
+    window.onclick = function(event) {if (event.target == modal) { modal.style.display = "none";}}
+  </script>
+</head>
+<body style="background-color:#312c6e">
+<header class="bg-image">
+  <div class="container">
+    <h1>Overseas Fund Transfer</h1>
+    <h2>[insert acc reference]</h2>
+  </div>
+</header><center>
+<div class="left-PT-quarter">
+    <h1><br><button id="myBtn">Make Transaction</button></h1>
+</div>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  
+  </div>
+
+
+
+
+<div class="right-PT-quarter">
+    <h1>Search Transaction</h1>
+    <h1><input  class="input_text" type="text" name="searchbar"><input class="input_btn"type="submit" value="Search!"></h1>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+<div >
+    <table class="tx_table">
+        <tr style=" background-color: #dcc5ee;border: 1px solid rgb(255, 255, 255);padding: .35em;">
+                <th>No.</th>
+                <th>Date</th>
+                <th>Transaction Reference</th>
+                <th>Amount</th>
+                <th>+</th>
+        </tr> 
+        <tr style=" background-color: #c590f1;border: 1px solid rgb(255, 255, 255);padding: .35em;">
+                <td>1</td>
+                <td>12/12/2014</td>
+                <td><h3>ffec4f8b898e001bed875a7d275c9900</h3></td>
+                <td>RM3000</td>
+                <td><h3>...</h3></td>
+
+        </tr>
+        <tr style=" background-color: #c590f1;border: 1px solid rgb(255, 255, 255);padding: .35em;">
+                <td>1</td>
+                <td>11/12/2014</td>
+                <td><h3>d8daaf40c5f782b003dca3dbb1d76065</h3></td>
+                <td>RM200</td>
+                <td><h3>...</h3></td>
+        </tr>       
+    </table>
+
+</div>
+ </center>           
+</body>
+</html>
+

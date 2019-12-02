@@ -1,4 +1,3 @@
-
 <?php
 
 class Route{
@@ -7,10 +6,11 @@ class Route{
 
     public static function set($route,$function){
 
-        self::$validRoutes[] = $route;
+	array_push(self::$validRoutes, $route);
+        //self::$validRoutes[] = $route;
 
         //print_r(self::$validRoutes);
-        if(isset($_GET['url']) == $route){
+        if($_GET['url'] == $route){
             $function->__invoke();
         }
     }

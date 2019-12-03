@@ -5,5 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
 
-RewriteCond %{REQUEST_URI} !(\.jpg|\.jpeg|\.css)$ [NC]
+RewriteCond %{REQUEST_URI} !(\.jpg|\.jpeg)$ [NC]
 #RewriteRule ^([^/]+)/? /index.php?url=$1 [L,QSA]

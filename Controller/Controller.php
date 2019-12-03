@@ -4,8 +4,10 @@
 class Controller{
 
     public static function createView($view){
-        $html = $view . '.html';
-        echo $view;
+	    $path = '/../Views/'.$view . '.html';
+	    $path =  __DIR__.$path;
+	    //var_dump($path);
+	    include ($path);
     }
 }
 

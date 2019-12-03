@@ -14,4 +14,7 @@ Route::set('Feedback',function(){
     //echo "Feedback post";
 });
 
+Route::set('login',function(){
+    Controller::createView('login');
+});
 ?>

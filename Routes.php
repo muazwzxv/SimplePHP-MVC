@@ -1,8 +1,9 @@
 
 <?php
-
+$postData = $_POST;
 Route::set('home',function(){
-    Home::createView("index");
+	//var_dump($_SERVER['REQUEST_METHOD']);
+    	Home::createView("index");
 });
 
 Route::set('payment',function(){
@@ -14,7 +15,10 @@ Route::set('Feedback',function(){
     //echo "Feedback post";
 });
 
-Route::set('login',function(){
-    Controller::createView('login');
+Route::set('login', function() use ($postData){
+	if($_SERVER['REQUEST_METHOD'] === "POST")
+		Login::processLogin($postData);
+	else
+		Controller::createView('login');
 });
 ?>

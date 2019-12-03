@@ -1,20 +1,22 @@
 
 <?php
-
-Route::set('home',function(){
-    Home::createView("index");
+$postData = $_POST;
+Route::get('home',function(){
+    	Home::renderView();
 });
 
-Route::set('payment',function(){
-    //Payment::createView();
+Route::get('payment',function(){
+	Payment::renderView();
 });
 
-Route::set('Feedback',function(){
-    //Feedback::createView();
-    //echo "Feedback post";
+Route::get('Feedback',function(){
+	Feedback::renderView();
 });
 
-Route::set('login',function(){
-    Controller::createView('login');
+Route::get('login', function(){
+	Login::renderView();
+});
+Route::post('login', function() use ($postData){
+	Login::processLogin($postData);
 });
 ?>

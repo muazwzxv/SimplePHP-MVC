@@ -4,14 +4,27 @@ class Route{
 
     public static $validRoutes = array();
 
-    public static function set($route,$function){
+    public static function get($route,$function){
+	        
+	if($_SERVER['REQUEST_METHOD'] != "GET")
+		return;
 
-	array_push(self::$validRoutes, $route);
-        //self::$validRoutes[] = $route;
+	self::invokeUserFunction($route, $function);
+    }
 
-        //print_r(self::$validRoutes);
-        if($_GET['url'] == $route){
-            $function->__invoke();
+    public static function post($route,$function){
+	        
+	if($_SERVER['REQUEST_METHOD'] != "POST")
+		return;
+
+	self::invokeUserFunction($route, $function);
+    }
+
+    public function invokeUserFunction($route, $function){
+	array_push(self::$validRoutes, $route);		
+	if($_GET['url'] == $route && in_array($_GET['url'], self::$validRoutes)){
+		$function->__invoke();
+		die();
         }
     }
 }

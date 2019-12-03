@@ -1,24 +1,22 @@
 
 <?php
 $postData = $_POST;
-Route::set('home',function(){
-	//var_dump($_SERVER['REQUEST_METHOD']);
-    	Home::createView("index");
+Route::get('home',function(){
+    	Home::renderView();
 });
 
-Route::set('payment',function(){
-    //Payment::createView();
+Route::get('payment',function(){
+	Payment::renderView();
 });
 
-Route::set('Feedback',function(){
-    //Feedback::createView();
-    //echo "Feedback post";
+Route::get('Feedback',function(){
+	Feedback::renderView();
 });
 
-Route::set('login', function() use ($postData){
-	if($_SERVER['REQUEST_METHOD'] === "POST")
-		Login::processLogin($postData);
-	else
-		Controller::createView('login');
+Route::get('login', function() use ($postData){
+	Login::renderView();
+});
+Route::post('login', function() use ($postData){
+	Login::processLogin($postData);
 });
 ?>

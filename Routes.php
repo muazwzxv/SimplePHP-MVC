@@ -13,7 +13,7 @@ Route::get('Feedback',function(){
 	Feedback::renderView();
 });
 
-Route::get('login', function() use ($postData){
+Route::get('login', function(){
 	Login::renderView();
 });
 Route::post('login', function() use ($postData){

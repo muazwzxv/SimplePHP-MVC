@@ -12,7 +12,7 @@ Route::get('index', function (){
    HomeController::renderView(); 
 });
 ```
-2. POST method
+2. POST method </br>
 In order to pass POST parameters to the callback function, the reference of the ```$_POST``` variable must be created, and use a closure variable using the ```use``` keyword.
 ```
 $postData = $_POST;

@@ -2,7 +2,7 @@
 <?php
 $postData = $_POST;
 Route::get('home',function(){
-    	Home::renderView();
+    Home::renderView();
 });
 
 Route::get('payment',function(){
@@ -16,6 +16,11 @@ Route::get('Feedback',function(){
 Route::get('login', function(){
 	Login::renderView();
 });
+
+Route::get('homeprofile', function(){
+	Profile::renderView();
+});
+
 Route::post('login', function() use ($postData){
 	Login::processLogin($postData);
 });

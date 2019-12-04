@@ -5,6 +5,15 @@ $postData = $_POST;
 Route::get('home',function(){
     HomeController::renderView();
 });
+Route::get('home/about', function(){
+    HomeController::renderView("about");
+});
+Route::get('home/faq', function(){
+    HomeController::renderView("faq");
+});
+Route::get('home/contact', function(){
+    HomeController::renderView("contact");
+});
 
 
 

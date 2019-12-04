@@ -7,7 +7,8 @@ class LoginModel extends Model{
         ");
 
         if(self::existRows($result)){
-            die("Logged in");
+            //die("Logged in");
+            header("Location: http://localhost:80/mvc/homeprofile");
         }
         else{
             die("Not Logged in");

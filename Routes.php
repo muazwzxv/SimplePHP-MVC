@@ -7,6 +7,17 @@ Route::get('home',function(){
 });
 
 
+
+Route::get('register', function(){
+	RegisterController::renderView();
+});
+
+Route::post('register', function() use ($postData){
+	RegisterController::processRegister($postData);
+});
+
+
+
 Route::get('login', function(){
 	LoginController::renderView();
 });

@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller{
+class LoginController extends Controller{
 
 	public static function renderView(){
 		parent::createView('login');
@@ -8,7 +8,9 @@ class Login extends Controller{
 	public static function processLogin($data){
 		$username = $data['username'];
 		$password = $data['password'];
-		echo $username." ".$password;
+		//echo $username." ".$password;
+
+		LoginModel::login($username, $password);
 	}
 }
 

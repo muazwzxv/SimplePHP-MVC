@@ -1,22 +1,37 @@
 
 <?php
 $postData = $_POST;
+
 Route::get('home',function(){
-    	Home::renderView();
+    HomeController::renderView();
+});
+Route::get('home/about', function(){
+    HomeController::renderView("about");
+});
+Route::get('home/faq', function(){
+    HomeController::renderView("faq");
+});
+Route::get('home/contact', function(){
+    HomeController::renderView("contact");
 });
 
-Route::get('payment',function(){
-	Payment::renderView();
+
+
+Route::get('register', function(){
+	RegisterController::renderView();
 });
 
-Route::get('Feedback',function(){
-	Feedback::renderView();
+Route::post('register', function() use ($postData){
+	RegisterController::processRegister($postData);
 });
+
+
 
 Route::get('login', function(){
-	Login::renderView();
+	LoginController::renderView();
 });
+
 Route::post('login', function() use ($postData){
-	Login::processLogin($postData);
+	LoginController::processLogin($postData);
 });
 ?>

@@ -13,7 +13,7 @@ class RegisterController extends Controller{
 		$phone = $data['phone'];
 		$password = $data['password'];
 
-		RegisterModel::register($username, ,$email, $phone, $password);
+		RegisterModel::register($username, $email, $phone, $password);
 	}
 }
 

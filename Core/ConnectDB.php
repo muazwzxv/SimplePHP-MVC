@@ -11,7 +11,7 @@ class ConnectDB{
         $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
         //var_dump($this->conn);
         if ($this->conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+            die("Connection failed: " . $this->conn->connect_error);
         }
     }
 
